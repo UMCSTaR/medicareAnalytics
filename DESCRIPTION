@@ -1,0 +1,18 @@
+Package: MedicareAnalytics
+Title: Analytic Tools for Medicare Data Research Projects
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Xilin",
+           family = "Chen",
+           role = c("aut", "cre"),
+           email = "xilin.chen24@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Analytic tools for medicare data research projects including filters, renaming etc. 
+    This package includes functions commonly used for research projects using Medicare analytic files.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    data.table
