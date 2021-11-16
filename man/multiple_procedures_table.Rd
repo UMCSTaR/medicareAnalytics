@@ -10,7 +10,7 @@ multiple_procedures_table(
 )
 }
 \arguments{
-\item{data}{}
+\item{data}{medicare data}
 
 \item{project_sepcific_procedure_tax}{project specific procedure taxinomy}
 }

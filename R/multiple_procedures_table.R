@@ -22,7 +22,7 @@ multiple_procedures_table <- function(data,
     data = medicareAnalytics::add_n_proc_admission(data)
   }
   
-  if(rlang::as_label(project_sepcific_procedure_tax) %in% names(data)){
+  if(!rlang::as_label(project_sepcific_procedure_tax) %in% names(data)){
     stop("taxonomy varaible:", rlang::as_label(project_sepcific_procedure_tax),
          " is not in your dataset")
   }
