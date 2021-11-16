@@ -4,11 +4,11 @@
 #'
 #' @param data medicare data
 #'
-#' @return
-#' @export
 #' @import data.table
 #'
-#' @examples
+#' @return medicare analytic file with one additinal variable "n_cpt_admission".
+#' @export
+
 add_n_proc_admission <- function(data) {
 
   # check and set data.table
@@ -20,5 +20,6 @@ add_n_proc_admission <- function(data) {
   # data.table format is faster than tidyverse
   data[, n_cpt_admission := .N, by = .(member_id, dt_facclm_adm, dt_facclm_dschg)]
 
+  dplyr::glimpse(data)
   return(data)
 }

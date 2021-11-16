@@ -10,9 +10,9 @@ add_n_proc_admission(data)
 \item{data}{medicare data}
 }
 \value{
-
+medicare analytic file with one additinal variable "n_cpt_admission".
 }
 \description{
-Add new variable to indicate number of CPTs in one hospital admission
+Add new variable "n_cpt_admission" to indicate number of CPTs in one hospital admission
 using member_id, facility claim admission and discharge dates
 }
