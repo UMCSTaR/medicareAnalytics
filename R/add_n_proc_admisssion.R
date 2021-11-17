@@ -22,3 +22,23 @@ add_n_proc_admission <- function(data) {
 
   return(data)
 }
+
+#' remove multiple procedures in one admission cases
+#'
+#' @param data medicare data
+#'
+#' @return
+#' @export
+#'
+
+remove_multi_proc <- function(data) {
+  
+  if("n_cpt_admission" %in% names(data)){
+    data[n_cpt_admission == 1]
+  } else {
+    data = add_n_proc_admission(data) 
+    
+    data[n_cpt_admission == 1]
+  }
+  
+}

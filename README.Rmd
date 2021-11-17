@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# medicareAnalytics
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of medicareAnalytics is to simplify the data processing and modeling for medicare research projects. This project is based on the medicare analytic file data structures, and used a lot variable names specifically only for the medicare analytic file.
+
+Since most of the medicare projects are using the same cohort filters and models, this package can help the analysts and reseach fellows to conduct analyses.
+
+## Installation
+
+You can install the development version of medicareAnalytics from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("UMCSTaR/medicareAnalytics")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+## Create multi-procedure frequency table
+
+```{r example}
+library(medicareAnalytics)
+library(tidyverse)
+## basic example code
+
+# load medicare dt
+medicare = data.table::fread("/Volumes/George_Surgeon_Projects/standardized_medicare_data_using_R/analysis_ready_data/ecs_primary_surgeon_medicare2018.csv", nrows = 5000)
+
+
+multiple_procedures_table(medicare, project_sepcific_procedure_tax = "e_proc_grp_lbl")
+```
+
+## Only keep US medschool graduates
+
+```{r}
+# load medicare dt
+medicare = data.table::fread("/Volumes/George_Surgeon_Projects/standardized_medicare_data_using_R/analysis_ready_data/ecs_primary_surgeon_medicare2018.csv", nrows = 5000)
+
+
+remove_nonUS_trained(medicare) %>% glimpse()
+```
+
+## apply all filters
+
+```{r}
+medicare %>% apply_all_filters(add_variables = "val_yr_practice")
+```
+
+
