@@ -4,7 +4,7 @@
 #'
 #' @param data medicare data
 #'
-#' @import data.table
+#' @rawNamespace import(data.table, except=c(last, first, between))
 #'
 #' @return medicare analytic file with one additinal variable "n_cpt_admission".
 #' @export
