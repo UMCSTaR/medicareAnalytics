@@ -4,13 +4,28 @@
 \alias{apply_all_filters}
 \title{Use all cohort filters}
 \usage{
-apply_all_filters(data, remove_multi_procedure = T, ...)
+apply_all_filters(
+  data,
+  remove_multi_procedure = T,
+  fellowship_council_data_path,
+  medicare_gs_list_path,
+  add_variables,
+  ...
+)
 }
 \arguments{
 \item{data}{medicare}
 
 \item{remove_multi_procedure}{TRUE: remove all mult procedure cases;
 FALSE: add variable "n_cpt_admission"}
+
+\item{fellowship_council_data_path}{path to fellowship council dt}
+
+\item{medicare_gs_list_path}{assign value to NULL if you don't want use the
+medicare specialty code criteria.}
+
+\item{add_variables}{add more variables that ware not listed, forb example case
+value, years of experience. If need to add multiple variables, use syntax c("va1", "var2")}
 
 \item{...}{parameters inputs for all sub-filter functions:
 remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete}

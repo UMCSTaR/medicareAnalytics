@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.Rmd. Please update that file using devtools::build_readme()-->
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -33,9 +33,7 @@ devtools::install_github("UMCSTaR/medicareAnalytics")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
-## Create multi-procedure frequency table
+### Create multi-procedure frequency table
 
 ```{r example}
 library(medicareAnalytics)
@@ -46,7 +44,8 @@ library(tidyverse)
 medicare = data.table::fread("/Volumes/George_Surgeon_Projects/standardized_medicare_data_using_R/analysis_ready_data/ecs_primary_surgeon_medicare2018.csv", nrows = 5000)
 
 
-multiple_procedures_table(medicare, project_sepcific_procedure_tax = "e_proc_grp_lbl")
+multiple_procedures_table(medicare, project_sepcific_procedure_tax = "e_proc_grp_lbl") 
+
 ```
 
 ## Only keep US medschool graduates
@@ -56,13 +55,18 @@ multiple_procedures_table(medicare, project_sepcific_procedure_tax = "e_proc_grp
 medicare = data.table::fread("/Volumes/George_Surgeon_Projects/standardized_medicare_data_using_R/analysis_ready_data/ecs_primary_surgeon_medicare2018.csv", nrows = 5000)
 
 
-remove_nonUS_trained(medicare) %>% glimpse()
+remove_nonUS_trained(medicare) %>% 
+  select(-contains("id"), -contains("dt")) %>%  # remove sensitive data
+  head()
 ```
 
-## apply all filters
+### apply all filters
 
 ```{r}
-medicare %>% apply_all_filters(add_variables = "val_yr_practice")
+medicare %>% 
+  apply_all_filters(add_variables = "val_yr_practice") %>%
+  select(-contains("id"), -contains("dt")) %>%  # remove sensitive data
+  glimpse()
 ```
 
 

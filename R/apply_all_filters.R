@@ -7,6 +7,8 @@
 #' @param data medicare
 #' @param remove_multi_procedure TRUE: remove all mult procedure cases;
 #'     FALSE: add variable "n_cpt_admission"
+#' @inheritParams remove_fellowship
+#' @inheritParams remove_non_complete
 #' @param ... parameters inputs for all sub-filter functions: 
 #'     remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete
 #'
@@ -15,7 +17,11 @@
 #'
 #' @examples
 apply_all_filters <- function(data, 
-                              remove_multi_procedure = T,...) {
+                              remove_multi_procedure = T,
+                              fellowship_council_data_path,
+                              medicare_gs_list_path,
+                              add_variables,
+                              ...) {
   
   # if remove multi procedures on on admission 
   if(remove_multi_procedure) {
