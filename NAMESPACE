@@ -3,6 +3,7 @@
 export(add_n_proc_admission)
 export(apply_all_filters)
 export(cohort_selection_diagram)
+export(create_model_formulas)
 export(multiple_procedures_table)
 export(n_case_surg)
 export(prep_data_for_model)

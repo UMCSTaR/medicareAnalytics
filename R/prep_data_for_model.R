@@ -47,6 +47,20 @@ prep_data_for_model <- function(
   data = data %>%
     mutate(facility_clm_yr_from_year0 = facility_clm_yr - min(facility_clm_yr))
   
+  
+  # convert logical to integers ---------------------------------------------
+  data = mutate_if(data, is.logical, as.integer)
+  
+  
+  # misc other --------------------------------------------------------------
+  
+  # for random effects
+  data = data %>% 
+    mutate(
+      id_physician_npi   = factor(id_physician_npi),
+      facility_prvnumgrp = factor(facility_prvnumgrp)
+    )
+  
   # rename variables
   data = data %>%
     mutate(sex = ifelse(flg_male == 1, "male", "female"),
@@ -68,21 +82,6 @@ prep_data_for_model <- function(
       readmission_30d = flg_readmit_30d,
       reoperation_30d = flg_util_reop
     ) 
-  
-  
-  # convert logical to integers ---------------------------------------------
-  data = mutate_if(data, is.logical, as.integer)
-  
-  
-  # misc other --------------------------------------------------------------
-  
-  # for random effects
-  data = data %>% 
-    mutate(
-      id_physician_npi   = factor(id_physician_npi),
-      facility_prvnumgrp = factor(facility_prvnumgrp)
-    )
-  
   
   # convert char to factor just to avoid potential issues with bam
   
