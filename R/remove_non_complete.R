@@ -7,8 +7,8 @@
 #'    "val_hosp_rn2bed_ratio", "id_physician_npi","facility_prvnumgrp"
 #'
 #' @param data medicare data
-#' @param add_variables add more variables that ware not listed, forb example case
-#'    value, years of experience. If need to add multiple variables, use syntax c("va1", "var2")
+#' @param add_variables variables that need to be used to exclude missing values, for example
+#'    years of experience. If need to add multiple variables, use syntax c("var1", "var2")
 #'
 #' @return
 #' @export
@@ -36,7 +36,7 @@ remove_non_complete <- function(data,
   )
   
   model_vars = c(model_vars, add_variables)
-  
+  model_vars = unique(model_vars)
   
   data %>% 
     drop_na(!!model_vars)

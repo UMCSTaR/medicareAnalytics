@@ -19,6 +19,6 @@ frequency table
 }
 \description{
 make frequency table for multiple procedures combinations in one admission.
-By making the frequency table, it's easier to see what procedures happened in on admission
+Using the frequency table to see what procedures happened in one admission
 more frequently
 }

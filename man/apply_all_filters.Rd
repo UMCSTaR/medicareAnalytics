@@ -24,8 +24,8 @@ FALSE: add variable "n_cpt_admission"}
 \item{medicare_gs_list_path}{assign value to NULL if you don't want use the
 medicare specialty code criteria.}
 
-\item{add_variables}{add more variables that ware not listed, forb example case
-value, years of experience. If need to add multiple variables, use syntax c("va1", "var2")}
+\item{add_variables}{variables that need to be used to exclude missing values, for example
+years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 
 \item{...}{parameters inputs for all sub-filter functions:
 remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete}

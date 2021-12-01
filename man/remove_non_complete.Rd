@@ -9,8 +9,8 @@ remove_non_complete(data, add_variables = "val_yr_practice")
 \arguments{
 \item{data}{medicare data}
 
-\item{add_variables}{add more variables that ware not listed, forb example case
-value, years of experience. If need to add multiple variables, use syntax c("va1", "var2")}
+\item{add_variables}{variables that need to be used to exclude missing values, for example
+years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 }
 \value{
 
