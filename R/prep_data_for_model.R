@@ -37,7 +37,7 @@ prep_data_for_model <- function(
   
   # e_admit_type 1- emergency 2 urgent 3 elective 4 other 9 UK/missing
   data = data %>%
-    mutate(emergency_status = ifelse(e_admit_type == 1 | e_admit_type == 2, "emergent", "elective"))
+    mutate(emergency_status = ifelse(e_admit_type == "1_Emergency" | e_admit_type == "2_Urgent", "emergent", "elective"))
   
   # ses 5 groups
   data = data %>%
@@ -71,8 +71,7 @@ prep_data_for_model <- function(
       procedure = e_proc_grp_lbl,
       year = facility_clm_yr_from_year0,
       surgeon_years_experience = val_yr_practice,
-      hospital_urban = flg_hosp_urban,
-      hospital_urban_cbsa = flg_hosp_urban_cbsa,
+      hospital_urban = flg_hosp_urban_cbsa,
       hospital_icu = flg_hosp_ICU_hosp,
       hospital_rn2bed_ratio_std = val_hosp_rn2bed_ratio_std,
       hospital_mcday2inptday_ratio_std = val_hosp_mcday2inptday_ratio_std,
