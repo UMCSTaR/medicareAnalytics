@@ -37,11 +37,11 @@ prep_data_for_model <- function(
   
   # e_admit_type 1- emergency 2 urgent 3 elective 4 other 9 UK/missing
   data = data %>%
-    mutate(emergency_status = ifelse(e_admit_type == "1_Emergency" | e_admit_type == "2_Urgent", "emergent", "elective"))
+    mutate(emergent_admission = ifelse(e_admit_type == "1_Emergency" | e_admit_type == "2_Urgent", 1, 0))
   
   # ses 5 groups
   data = data %>%
-    mutate(ses = ifelse(e_ses_5grp<=2, "bottom2quintiles", "top3quintiles"))
+    mutate(ses_top3quintiles = ifelse(e_ses_5grp>2, 1, 0))
   
   # facility claim year starting from 0
   data = data %>%
@@ -63,7 +63,7 @@ prep_data_for_model <- function(
   
   # rename variables
   data = data %>%
-    mutate(sex = ifelse(flg_male == 1, "male", "female"),
+    mutate(sex_male = ifelse(flg_male == 1, 1, 0),
            hospital_beds_gt_350 = ifelse( e_hosp_beds_4grp %in% c(3,4), 1, 0)) %>% 
     rename(
       id_surgeon = id_physician_npi,
