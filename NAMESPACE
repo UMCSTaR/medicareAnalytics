@@ -12,6 +12,7 @@ export(remove_multi_proc)
 export(remove_nonUS_trained)
 export(remove_non_complete)
 export(sample_frac_group)
+export(theme_cstar)
 import(data.table, except=c(last, first, between))
 
 import(dplyr)

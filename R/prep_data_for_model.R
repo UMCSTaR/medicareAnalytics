@@ -24,9 +24,12 @@ prep_data_for_model <- function(
   # standardize numeric -----------------------------------------------------
   
   if (!is.null(standardize)) {
-    data = data %>% 
+    std_vars = data %>% 
+      select(!!standardize) %>% 
       mutate_at(standardize, function(x) scale(x)[,1]) %>% 
       rename_at(standardize, function(x) paste0(x, '_std'))
+    
+    data = cbind(data, std_vars)
   }
   
   # categorical to binary ------------------------------------------------------
