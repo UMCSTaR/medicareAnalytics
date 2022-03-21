@@ -4,7 +4,7 @@
 \alias{theme_cstar}
 \title{ggplot theme used for publication}
 \usage{
-theme_cstar()
+theme_cstar(...)
 }
 \value{
 

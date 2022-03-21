@@ -4,7 +4,7 @@
 #' @return
 #' @export
 #'
-theme_cstar <- function() {
+theme_cstar <- function(...) {
   theme_classic() +
     theme(
       axis.title.y        = element_text(angle = 90, size = 14),

@@ -2,15 +2,22 @@
 % Please edit documentation in R/cohort_selection_diagram.R
 \name{cohort_selection_diagram}
 \alias{cohort_selection_diagram}
-\title{Cohort selection diagram for defined filters}
+\title{Cohort Selection Diagram}
 \usage{
-cohort_selection_diagram(data, add_variables = model_vars, ...)
+cohort_selection_diagram(
+  data,
+  add_variables = model_vars,
+  yoe_cutoff = 35,
+  ...
+)
 }
 \arguments{
-\item{data}{top data (raw data)}
+\item{data}{original data}
 
 \item{add_variables}{variables that need to be used to exclude missing values, for example
 years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
+
+\item{yoe_cutoff}{the max years of experience included in the dataset}
 
 \item{...}{}
 }
@@ -18,5 +25,6 @@ years of experience. If need to add multiple variables, use syntax c("var1", "va
 
 }
 \description{
+create cohort selection diagram based on apply_all_filters function.
 This is often used to understand how many cases and surgeons are removed in each filter
 }

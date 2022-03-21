@@ -10,6 +10,7 @@ apply_all_filters(
   fellowship_council_data_path,
   medicare_gs_list_path,
   add_variables,
+  yoe_cutoff = 35,
   ...
 )
 }
@@ -26,6 +27,8 @@ medicare specialty code criteria.}
 
 \item{add_variables}{variables that need to be used to exclude missing values, for example
 years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
+
+\item{yoe_cutoff}{the max years of experience included in the dataset}
 
 \item{...}{parameters inputs for all sub-filter functions:
 remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete}

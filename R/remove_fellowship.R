@@ -1,5 +1,5 @@
 #' Remove Fellowship trained surgeons
-#' @description Remove fellowship trained surgeons using ABS, fellowship council and medciare claim specialty code
+#' @description Remove fellowship trained surgeons using ABS, fellowship council and medicare claim specialty code
 #'
 #' @param data medicare data
 #' @param fellowship_council_data_path path to fellowship council dt

@@ -9,6 +9,7 @@
 #'     FALSE: add variable "n_cpt_admission"
 #' @inheritParams remove_fellowship
 #' @inheritParams remove_non_complete
+#' @param yoe_cutoff the max years of experience included in the dataset
 #' @param ... parameters inputs for all sub-filter functions: 
 #'     remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete
 #'
@@ -21,6 +22,7 @@ apply_all_filters <- function(data,
                               fellowship_council_data_path,
                               medicare_gs_list_path,
                               add_variables,
+                              yoe_cutoff = 35,
                               ...) {
   
   # if remove multi procedures on on admission 
@@ -34,6 +36,8 @@ apply_all_filters <- function(data,
   data %>% 
     remove_nonUS_trained() %>% 
     remove_fellowship() %>% 
-    remove_non_complete()
+    remove_non_complete() %>% 
+    filter(val_yr_practice <= yoe_cutoff,
+           val_yr_practice >0)
   
 }

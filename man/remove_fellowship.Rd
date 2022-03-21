@@ -24,5 +24,5 @@ medicare specialty code criteria.}
 medicare dataset that removed fellowship trained surgeons
 }
 \description{
-Remove fellowship trained surgeons using ABS, fellowship council and medciare claim specialty code
+Remove fellowship trained surgeons using ABS, fellowship council and medicare claim specialty code
 }
