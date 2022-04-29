@@ -10,7 +10,18 @@
 #' @return a list of model formulas
 #' @export
 #'
-#' @examples
+#' @examples 
+#' create_model_formulas(
+#' targets = c("severe_complication", "death_30d"),
+#' primary_covariate = 's(surgeon_years_experience, k = 5)',
+#' other_covariates = model_covariates,
+#' random_effects = c(
+#'   'procedure, surgeon_years_experience',
+#'   'id_surgeon',
+#'   'id_hospital',
+#'   'cpt_cd'),
+#' mgcv = F) # a glmm model for lme4
+
 create_model_formulas <- function(
   targets = outcomes,
   primary_covariate = primary,
