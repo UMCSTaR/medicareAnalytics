@@ -82,7 +82,8 @@ prep_data_for_model <- function(
       death_30d = flg_death_30d,
       severe_complication = flg_cmp_po_severe_not_poa,
       readmission_30d = flg_readmit_30d,
-      reoperation_30d = flg_util_reop
+      reoperation_30d = flg_util_reop,
+      any_complication = flg_cmp_po_any_not_poa,
     ) 
   
   # convert char to factor just to avoid potential issues with bam

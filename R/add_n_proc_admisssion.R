@@ -6,7 +6,7 @@
 #'
 #' @rawNamespace import(data.table, except=c(last, first, between))
 #'
-#' @return medicare analytic file with one additinal variable "n_cpt_admission".
+#' @return medicare analytic file with one additional variable "n_cpt_admission".
 #' @export
 
 add_n_proc_admission <- function(data) {
@@ -18,7 +18,7 @@ add_n_proc_admission <- function(data) {
 
   # add new var in place
   # data.table format is faster than tidyverse
-  data[, n_cpt_admission := .N, by = .(member_id, dt_facclm_adm, dt_facclm_dschg)]
+  data[, n_cpt_admission := .N, by = .(member_id, dt_profsvc_start, dt_profsvc_end)]
 
   return(data)
 }
