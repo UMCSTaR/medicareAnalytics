@@ -4,7 +4,7 @@
 #'     more frequently
 #'
 #' @param data medicare data 
-#' @param project_sepcific_procedure_tax project specific procedure taxinomy
+#' @param project_sepcific_procedure_tax project specific procedure taxonomy
 #'
 #' @import dplyr
 #' @import tidyr
@@ -14,7 +14,7 @@
 
 
 multiple_procedures_table <- function(data,
-                                      project_sepcific_procedure_tax = score_operation_procedure) {
+                                      project_sepcific_procedure_tax = "e_proc_grp_lbl") {
   # prep
   project_sepcific_procedure_tax_enquo <- enquo(project_sepcific_procedure_tax)
   
