@@ -25,9 +25,6 @@ FALSE: add variable "n_cpt_admission"}
 \item{medicare_gs_list_path}{assign value to NULL if you don't want use the
 medicare specialty code criteria.}
 
-\item{add_variables}{variables that need to be used to exclude missing values, for example
-years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
-
 \item{yoe_cutoff}{the max years of experience included in the dataset}
 
 \item{...}{parameters inputs for all sub-filter functions:

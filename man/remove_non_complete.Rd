@@ -4,12 +4,18 @@
 \alias{remove_non_complete}
 \title{Remove non-complete cases}
 \usage{
-remove_non_complete(data, add_variables = "val_yr_practice")
+remove_non_complete(
+  data,
+  variables = c("flg_cmp_po_severe", "flg_male", "age_at_admit", "e_race_wbho",
+    "e_admit_type", "AHRQ_score", "e_ses_5grp", "facility_clm_yr", "had_assist_surg",
+    "e_hosp_beds_4grp", "flg_hosp_ICU_hosp", "val_hosp_mcday2inptday_ratio",
+    "val_hosp_rn2bed_ratio", "id_physician_npi", "facility_prvnumgrp")
+)
 }
 \arguments{
 \item{data}{medicare data}
 
-\item{add_variables}{variables that need to be used to exclude missing values, for example
+\item{variables}{variables that need to be used to exclude missing values, for example
 years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 }
 \value{

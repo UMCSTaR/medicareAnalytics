@@ -14,9 +14,6 @@ cohort_selection_diagram(
 \arguments{
 \item{data}{original data}
 
-\item{add_variables}{variables that need to be used to exclude missing values, for example
-years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
-
 \item{yoe_cutoff}{the max years of experience included in the dataset}
 
 \item{...}{}
