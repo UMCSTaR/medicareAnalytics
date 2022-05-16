@@ -11,7 +11,7 @@
 #'
 #' @examples
 cohort_selection_diagram <- function(data,
-                                     add_variables = model_vars,
+                                     variables = model_vars,
                                      yoe_cutoff = 35,
                                      ...) {
   

@@ -9,7 +9,7 @@ apply_all_filters(
   remove_multi_procedure = T,
   fellowship_council_data_path,
   medicare_gs_list_path,
-  add_variables,
+  variables,
   yoe_cutoff = 35,
   ...
 )
@@ -24,6 +24,9 @@ FALSE: add variable "n_cpt_admission"}
 
 \item{medicare_gs_list_path}{assign value to NULL if you don't want use the
 medicare specialty code criteria.}
+
+\item{variables}{variables that need to be used to exclude missing values, for example
+years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 
 \item{yoe_cutoff}{the max years of experience included in the dataset}
 

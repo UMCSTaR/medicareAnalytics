@@ -21,7 +21,7 @@ apply_all_filters <- function(data,
                               remove_multi_procedure = T,
                               fellowship_council_data_path,
                               medicare_gs_list_path,
-                              add_variables,
+                              variables,
                               yoe_cutoff = 35,
                               ...) {
   

@@ -4,15 +4,13 @@
 \alias{cohort_selection_diagram}
 \title{Cohort Selection Diagram}
 \usage{
-cohort_selection_diagram(
-  data,
-  add_variables = model_vars,
-  yoe_cutoff = 35,
-  ...
-)
+cohort_selection_diagram(data, variables = model_vars, yoe_cutoff = 35, ...)
 }
 \arguments{
 \item{data}{original data}
+
+\item{variables}{variables that need to be used to exclude missing values, for example
+years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 
 \item{yoe_cutoff}{the max years of experience included in the dataset}
 
