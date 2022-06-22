@@ -9,9 +9,6 @@ remove_multi_proc(data)
 \arguments{
 \item{data}{medicare data}
 }
-\value{
-
-}
 \description{
 remove multiple procedures in one admission cases
 }

@@ -6,9 +6,6 @@
 \usage{
 theme_cstar(...)
 }
-\value{
-
-}
 \description{
 changing label fonts
 }

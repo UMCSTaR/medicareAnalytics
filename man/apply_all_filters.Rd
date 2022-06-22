@@ -33,9 +33,6 @@ years of experience. If need to add multiple variables, use syntax c("var1", "va
 \item{...}{parameters inputs for all sub-filter functions:
 remove_multi_proc, addd_n_proc_admission, remove_nonUS_trained, remove_fellowship, remove_non_complete}
 }
-\value{
-
-}
 \description{
 Use all cohort filters
 }

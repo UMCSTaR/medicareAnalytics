@@ -16,9 +16,6 @@ years of experience. If need to add multiple variables, use syntax c("var1", "va
 
 \item{...}{}
 }
-\value{
-
-}
 \description{
 create cohort selection diagram based on apply_all_filters function.
 This is often used to understand how many cases and surgeons are removed in each filter

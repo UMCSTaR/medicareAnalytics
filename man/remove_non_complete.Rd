@@ -18,9 +18,6 @@ remove_non_complete(
 \item{variables}{variables that need to be used to exclude missing values, for example
 years of experience. If need to add multiple variables, use syntax c("var1", "var2")}
 }
-\value{
-
-}
 \description{
 Remove non-complete cases
 }
