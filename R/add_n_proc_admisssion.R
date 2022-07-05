@@ -13,7 +13,7 @@ add_n_proc_admission <- function(data) {
 
   # check and set data.table
   if (is.data.table(data)) {
-    setDT(data)
+    data.table::setDT(data)
   }
 
   # add new var in place
